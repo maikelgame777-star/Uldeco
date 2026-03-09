@@ -1,5 +1,5 @@
 import { Paintbrush, ShieldCheck, Clock, Sparkles } from 'lucide-react';
-import { useState, MouseEvent } from 'react';
+import { useRef, MouseEvent } from 'react';
 import { motion } from 'motion/react';
 
 export function ValueProps() {
@@ -27,7 +27,7 @@ export function ValueProps() {
               <div className="flex items-center gap-4 text-sm font-medium text-slate-900">
                 <div className="flex -space-x-2">
                   {[1, 2, 3].map((i) => (
-                    <img key={i} src={`https://picsum.photos/seed/face${i}/100/100`} alt="Cliente" className="w-10 h-10 rounded-full border-2 border-white" referrerPolicy="no-referrer" />
+                    <img key={i} src={`https://picsum.photos/seed/face${i}/100/100`} alt="Cliente" className="w-10 h-10 rounded-full border-2 border-white" referrerPolicy="no-referrer" loading="lazy" />
                   ))}
                 </div>
                 <span>Más de 500 proyectos completados</span>
@@ -68,32 +68,35 @@ export function ValueProps() {
 }
 
 function ValueCard({ title, description, icon: Icon, delay = 0 }: { title: string, description: string, icon: any, delay?: number }) {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [opacity, setOpacity] = useState(0);
+  const glowRef = useRef<HTMLDivElement>(null);
 
   const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
+    if (!glowRef.current) return;
     const rect = e.currentTarget.getBoundingClientRect();
-    setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    glowRef.current.style.background = `radial-gradient(400px circle at ${x}px ${y}px, rgba(59,130,246,0.08), transparent 40%)`;
   };
 
+  const handleMouseEnter = () => { if (glowRef.current) glowRef.current.style.opacity = '1'; };
+  const handleMouseLeave = () => { if (glowRef.current) glowRef.current.style.opacity = '0'; };
+
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, delay, ease: "easeOut" }}
       onMouseMove={handleMouseMove}
-      onMouseEnter={() => setOpacity(1)}
-      onMouseLeave={() => setOpacity(0)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       className="group relative p-8 bg-white/60 backdrop-blur-2xl border border-white/50 rounded-3xl hover:-translate-y-2 hover:shadow-2xl hover:shadow-slate-200/50 transition-all duration-500 cursor-pointer overflow-hidden shadow-xl shadow-slate-200/20"
     >
-      {/* Cursor proximity glow */}
+      {/* Cursor proximity glow — DOM directo, sin re-renders */}
       <div
-        className="pointer-events-none absolute -inset-px transition-opacity duration-300 z-0"
-        style={{
-          opacity,
-          background: `radial-gradient(400px circle at ${position.x}px ${position.y}px, rgba(59,130,246,0.08), transparent 40%)`,
-        }}
+        ref={glowRef}
+        className="pointer-events-none absolute -inset-px z-0"
+        style={{ opacity: 0, transition: 'opacity 0.3s' }}
       />
       
       {/* Top border beam on hover */}

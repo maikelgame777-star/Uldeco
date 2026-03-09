@@ -9,6 +9,8 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
           alt="Pintores en Murcia - Interior Minimalista" 
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
+          fetchPriority="high"
+          loading="eager"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
       </div>

@@ -4,24 +4,10 @@ import { ArrowRight } from 'lucide-react';
 export function CTA({ onOpenContact }: { onOpenContact: () => void }) {
   return (
     <section className="py-24 relative overflow-hidden">
-      {/* Soft animated gradient background */}
+      {/* Soft animated gradient background — CSS only, no JS loop */}
       <div className="absolute inset-0 bg-slate-900" />
-      <motion.div 
-        animate={{ 
-          scale: [1, 1.5, 1],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-0 left-1/4 w-[50%] h-[100%] rounded-full bg-blue-600/30 blur-[120px]"
-      />
-      <motion.div 
-        animate={{ 
-          scale: [1, 1.2, 1],
-          opacity: [0.2, 0.4, 0.2],
-        }}
-        transition={{ duration: 20, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-        className="absolute bottom-0 right-1/4 w-[40%] h-[80%] rounded-full bg-purple-600/30 blur-[120px]"
-      />
+      <div className="animate-blob-3 absolute top-0 left-1/4 w-[50%] h-[100%] rounded-full bg-blue-600/30 blur-[120px]" />
+      <div className="animate-blob-4 absolute bottom-0 right-1/4 w-[40%] h-[80%] rounded-full bg-purple-600/30 blur-[120px]" />
 
       <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
         <motion.div
