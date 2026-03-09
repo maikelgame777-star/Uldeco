@@ -18,6 +18,7 @@ import { FAQ } from './components/FAQ';
 import { CTA } from './components/CTA';
 import { ContactModal } from './components/ContactModal';
 import { WhatsAppButton } from './components/WhatsAppButton';
+import { ChatBot } from './components/ChatBot';
 import { WaveDivider } from './components/WaveDivider';
 
 export default function App() {
@@ -61,6 +62,7 @@ export default function App() {
 
       <ContactModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} />
       <WhatsAppButton />
+      <ChatBot />
 
       <footer className="bg-teal-950 py-12 border-t border-white/10 text-center">
         <img src="/logo.png" alt="Uldeco" className="h-8 w-auto mx-auto mb-4 opacity-70" />
