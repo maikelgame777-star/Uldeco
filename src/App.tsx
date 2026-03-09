@@ -10,6 +10,7 @@ import { Hero } from './components/Hero';
 import { Marquee } from './components/Marquee';
 import { ValueProps } from './components/ValueProps';
 import { Testimonials } from './components/Testimonials';
+import { Gallery } from './components/Gallery';
 import { FAQ } from './components/FAQ';
 import { CTA } from './components/CTA';
 import { ContactModal } from './components/ContactModal';
@@ -27,6 +28,7 @@ export default function App() {
         <Marquee />
         <ValueProps />
         <Testimonials />
+        <Gallery />
         <FAQ />
         <CTA onOpenContact={() => setIsContactModalOpen(true)} />
       </main>

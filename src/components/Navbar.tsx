@@ -5,6 +5,7 @@ import { Menu, X } from 'lucide-react';
 const links = [
   { label: 'Servicios', href: '#servicios' },
   { label: 'Nosotros', href: '#nosotros' },
+  { label: 'Proyectos', href: '#galeria' },
   { label: 'Testimonios', href: '#testimonios' },
   { label: 'FAQ', href: '#faq' },
 ];
