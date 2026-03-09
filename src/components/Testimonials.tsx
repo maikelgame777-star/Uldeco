@@ -62,7 +62,7 @@ function TestimonialCard({ name, role, text, rating, delay }: any) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.6, delay }}
-      className="p-8 bg-white/60 backdrop-blur-2xl border border-white/50 rounded-3xl hover:-translate-y-2 hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-500 flex flex-col h-full shadow-xl shadow-slate-200/20"
+      className="p-8 bg-white border border-slate-100 rounded-3xl hover:-translate-y-2 hover:shadow-xl transition-all duration-500 flex flex-col h-full shadow-md"
     >
       <div className="flex gap-1 mb-6">
         {[...Array(5)].map((_, i) => (

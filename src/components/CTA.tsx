@@ -6,8 +6,8 @@ export function CTA({ onOpenContact }: { onOpenContact: () => void }) {
     <section className="py-24 relative overflow-hidden">
       {/* Soft animated gradient background — CSS only, no JS loop */}
       <div className="absolute inset-0 bg-slate-900" />
-      <div className="animate-blob-3 absolute top-0 left-1/4 w-[50%] h-[100%] rounded-full bg-blue-600/30 blur-[120px]" />
-      <div className="animate-blob-4 absolute bottom-0 right-1/4 w-[40%] h-[80%] rounded-full bg-purple-600/30 blur-[120px]" />
+      <div className="absolute top-0 left-1/4 w-[50%] h-[100%] rounded-full bg-blue-600/20 blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-[40%] h-[80%] rounded-full bg-purple-600/15 blur-3xl" />
 
       <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
         <motion.div
@@ -15,7 +15,7 @@ export function CTA({ onOpenContact }: { onOpenContact: () => void }) {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="bg-white/10 backdrop-blur-2xl border border-white/20 p-12 md:p-20 rounded-[3rem] shadow-2xl"
+          className="bg-white/10 border border-white/20 p-12 md:p-20 rounded-[3rem] shadow-2xl"
         >
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">
             ¿Listo para renovar tu espacio?

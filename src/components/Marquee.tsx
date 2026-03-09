@@ -4,7 +4,7 @@ const techniques = [
 
 export function Marquee() {
   return (
-    <section className="py-12 border-y border-white/40 bg-white/40 backdrop-blur-md overflow-hidden relative">
+    <section className="py-12 border-y border-slate-100 bg-white/90 overflow-hidden relative">
       <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-slate-50/80 to-transparent z-10" />
       <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-slate-50/80 to-transparent z-10" />
       

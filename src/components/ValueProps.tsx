@@ -90,7 +90,7 @@ function ValueCard({ title, description, icon: Icon, delay = 0 }: { title: strin
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="group relative p-8 bg-white/60 backdrop-blur-2xl border border-white/50 rounded-3xl hover:-translate-y-2 hover:shadow-2xl hover:shadow-slate-200/50 transition-all duration-500 cursor-pointer overflow-hidden shadow-xl shadow-slate-200/20"
+      className="group relative p-8 bg-white border border-slate-100 rounded-3xl hover:-translate-y-2 hover:shadow-2xl hover:shadow-slate-200/50 transition-all duration-500 cursor-pointer overflow-hidden shadow-md"
     >
       {/* Cursor proximity glow — DOM directo, sin re-renders */}
       <div

@@ -19,7 +19,7 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-        className="relative z-10 bg-white/40 backdrop-blur-3xl backdrop-saturate-150 p-8 md:p-12 rounded-[2.5rem] shadow-[0_8px_32px_rgba(0,0,0,0.08)] border border-white/40"
+        className="relative z-10 bg-white/85 p-8 md:p-12 rounded-[2.5rem] shadow-[0_8px_32px_rgba(0,0,0,0.08)] border border-white/60"
       >
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-sm font-medium mb-6">
           <span className="relative flex h-2 w-2">

@@ -45,15 +45,15 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50"
+            className="fixed inset-0 bg-slate-900/50 z-50"
           />
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl bg-white/70 backdrop-blur-3xl border border-white/50 rounded-3xl shadow-2xl z-50 overflow-hidden max-h-[90vh] flex flex-col"
+            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl bg-white border border-slate-100 rounded-3xl shadow-2xl z-50 overflow-hidden max-h-[90vh] flex flex-col"
           >
-            <div className="p-6 md:p-8 border-b border-white/40 flex justify-between items-center bg-white/40">
+            <div className="p-6 md:p-8 border-b border-slate-100 flex justify-between items-center bg-white">
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 tracking-tight">Agendar Reunión</h2>
                 <p className="text-slate-500 text-sm mt-1">Cuéntanos tu proyecto y te contactaremos en breve.</p>

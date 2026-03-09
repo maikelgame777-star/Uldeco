@@ -23,42 +23,6 @@
   100% { transform: translateX(100%); }
 }
 
-@keyframes blob-pulse-1 {
-  0%, 100% { transform: scale(1); opacity: 0.4; }
-  50% { transform: scale(1.1); opacity: 0.6; }
-}
-
-@keyframes blob-pulse-2 {
-  0%, 100% { transform: scale(1); opacity: 0.3; }
-  50% { transform: scale(1.2); opacity: 0.5; }
-}
-
-@keyframes blob-pulse-3 {
-  0%, 100% { transform: scale(1); opacity: 0.3; }
-  50% { transform: scale(1.5); opacity: 0.5; }
-}
-
-@keyframes blob-pulse-4 {
-  0%, 100% { transform: scale(1); opacity: 0.2; }
-  50% { transform: scale(1.2); opacity: 0.4; }
-}
-
-.animate-blob-1 {
-  animation: blob-pulse-1 15s ease-in-out infinite;
-  will-change: transform, opacity;
-}
-.animate-blob-2 {
-  animation: blob-pulse-2 20s ease-in-out infinite 2s;
-  will-change: transform, opacity;
-}
-.animate-blob-3 {
-  animation: blob-pulse-3 15s ease-in-out infinite;
-  will-change: transform, opacity;
-}
-.animate-blob-4 {
-  animation: blob-pulse-4 20s ease-in-out infinite 2s;
-  will-change: transform, opacity;
-}
 
 body {
   background-color: #fafafa;
