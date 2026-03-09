@@ -6,8 +6,8 @@ export function ValueProps() {
   return (
     <section id="nosotros" className="py-24 relative bg-transparent">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-          <div className="lg:col-span-5 sticky top-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+          <div className="lg:col-span-5 lg:sticky lg:top-24">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
               <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tight text-teal-900 dark:text-teal-50 mb-6 leading-tight">
                 La perfección <br />
