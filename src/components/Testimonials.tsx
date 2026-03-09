@@ -1,0 +1,84 @@
+import { motion } from 'motion/react';
+import { Star } from 'lucide-react';
+
+const testimonials = [
+  {
+    name: "María García",
+    role: "Particular, Centro de Murcia",
+    text: "Increíble trabajo en mi piso. Rápidos, limpios y muy profesionales. El alisado de paredes quedó perfecto, sin una sola imperfección.",
+    rating: 5,
+    delay: 0.1
+  },
+  {
+    name: "Carlos Ruiz",
+    role: "Presidente de Comunidad",
+    text: "Pintaron la fachada y las escaleras de nuestra comunidad. El resultado es espectacular y el trato inmejorable. 100% recomendables.",
+    rating: 5,
+    delay: 0.2
+  },
+  {
+    name: "Laura Martínez",
+    role: "Propietaria de Local Comercial",
+    text: "Buscaba pintores en Murcia para renovar mi tienda y di con ellos. Me asesoraron con los colores y el resultado superó mis expectativas.",
+    rating: 5,
+    delay: 0.3
+  },
+  {
+    name: "Antonio López",
+    role: "Particular, Molina de Segura",
+    text: "Muy formales con los plazos. Empezaron el día acordado y terminaron incluso antes. La limpieza final es un gran punto a favor.",
+    rating: 4,
+    delay: 0.4
+  }
+];
+
+export function Testimonials() {
+  return (
+    <section className="py-24 relative bg-transparent">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-4">
+            Lo que dicen nuestros clientes
+          </h2>
+          <p className="text-lg text-slate-600 font-light">
+            Nuestra misión es superar las expectativas en cada proyecto, entregando resultados superiores que hablan por sí mismos.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {testimonials.map((t, i) => (
+            <TestimonialCard key={i} {...t} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function TestimonialCard({ name, role, text, rating, delay }: any) {
+  return (
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6, delay }}
+      className="p-8 bg-white/60 backdrop-blur-2xl border border-white/50 rounded-3xl hover:-translate-y-2 hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-500 flex flex-col h-full shadow-xl shadow-slate-200/20"
+    >
+      <div className="flex gap-1 mb-6">
+        {[...Array(5)].map((_, i) => (
+          <Star key={i} className={`w-4 h-4 ${i < rating ? 'text-amber-400 fill-amber-400' : 'text-slate-200 fill-slate-200'}`} />
+        ))}
+      </div>
+      <p className="text-slate-700 mb-8 leading-relaxed font-light flex-grow">"{text}"</p>
+      <div className="flex items-center gap-4 mt-auto">
+        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center text-slate-700 font-semibold border border-slate-300/50">
+          {name.charAt(0)}
+        </div>
+        <div>
+          <div className="font-semibold text-slate-900 text-sm">{name}</div>
+          <div className="text-xs text-slate-500">{role}</div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
