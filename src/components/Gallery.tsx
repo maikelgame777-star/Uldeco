@@ -79,11 +79,17 @@ export function Gallery() {
                 src={img.src}
                 alt={img.label}
                 loading="lazy"
-                className="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500"
+                className={`w-full object-cover transition-transform duration-500 ${
+                  tab === 'despues'
+                    ? 'h-[70vh] object-center group-hover:scale-102'
+                    : 'h-64 group-hover:scale-105'
+                }`}
               />
-              <div className="absolute inset-0 bg-teal-950/0 group-hover:bg-teal-950/30 transition-colors duration-300 flex items-center justify-center">
-                <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
+              {tab === 'antes' && (
+                <div className="absolute inset-0 bg-teal-950/0 group-hover:bg-teal-950/30 transition-colors duration-300 flex items-center justify-center">
+                  <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              )}
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-teal-950/60 to-transparent px-4 py-3">
                 <p className="text-white text-sm font-medium">{img.label}</p>
               </div>
