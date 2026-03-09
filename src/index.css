@@ -1,7 +1,30 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+
+  --color-teal-50:  #edf6f8;
+  --color-teal-100: #d0e9ee;
+  --color-teal-200: #a0d3dc;
+  --color-teal-300: #60b4c3;
+  --color-teal-400: #2d8fa1;
+  --color-teal-500: #0e6b7c;
+  --color-teal-600: #0b5668;
+  --color-teal-700: #0b4f5c;
+  --color-teal-800: #0a3d47;
+  --color-teal-900: #072c33;
+
+  --color-olive-50:  #f6f8e8;
+  --color-olive-100: #ecf0c8;
+  --color-olive-200: #d6e08a;
+  --color-olive-300: #bccb49;
+  --color-olive-400: #a8b91e;
+  --color-olive-500: #9cae10;
+  --color-olive-600: #7d8c0d;
+  --color-olive-700: #5e6a0a;
+  --color-olive-800: #404807;
+  --color-olive-900: #252a04;
 }
 
 @layer utilities {
@@ -11,6 +34,9 @@
   }
   .animate-shimmer {
     animation: shimmer 2s infinite;
+  }
+  .font-display {
+    font-family: var(--font-display);
   }
 }
 
@@ -23,8 +49,8 @@
   100% { transform: translateX(100%); }
 }
 
-
 body {
-  background-color: #fafafa;
-  color: #0f172a;
+  background-color: #f7fafb;
+  color: #0a3d47;
+  font-family: var(--font-sans);
 }
