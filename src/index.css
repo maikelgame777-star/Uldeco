@@ -14,6 +14,7 @@
   --color-teal-700: #0b4f5c;
   --color-teal-800: #0a3d47;
   --color-teal-900: #072c33;
+  --color-teal-950: #041a1f;
 
   --color-olive-50:  #f6f8e8;
   --color-olive-100: #ecf0c8;
@@ -53,4 +54,11 @@ body {
   background-color: #f7fafb;
   color: #0a3d47;
   font-family: var(--font-sans);
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #041a1f;
+    color: #e2f0f3;
+  }
 }

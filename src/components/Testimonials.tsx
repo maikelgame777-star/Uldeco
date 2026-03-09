@@ -13,18 +13,15 @@ export function Testimonials() {
     <section id="testimonios" className="py-24 relative bg-transparent">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-teal-900 mb-4">
+          <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-teal-900 dark:text-teal-50 mb-4">
             Lo que dicen nuestros clientes
           </h2>
-          <p className="text-lg text-teal-700/70 font-light">
+          <p className="text-lg text-teal-700/70 dark:text-teal-300/70 font-light">
             Nuestra misión es superar las expectativas en cada proyecto.
           </p>
         </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {testimonials.map((t, i) => (
-            <TestimonialCard key={i} {...t} />
-          ))}
+          {testimonials.map((t, i) => <TestimonialCard key={i} {...t} />)}
         </div>
       </div>
     </section>
@@ -36,23 +33,23 @@ function TestimonialCard({ name, role, text, rating, delay }: any) {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
+      viewport={{ once: true, margin: '-100px' }}
       transition={{ duration: 0.6, delay }}
-      className="p-8 bg-white border border-teal-100 rounded-3xl hover:-translate-y-2 hover:shadow-xl hover:shadow-teal-100/50 transition-all duration-500 flex flex-col h-full shadow-md"
+      className="p-8 bg-white dark:bg-teal-900/40 border border-teal-100 dark:border-teal-800/50 rounded-3xl hover:-translate-y-2 hover:shadow-xl transition-all duration-500 flex flex-col h-full shadow-md"
     >
       <div className="flex gap-1 mb-6">
         {[...Array(5)].map((_, i) => (
-          <Star key={i} className={`w-4 h-4 ${i < rating ? 'text-olive-500 fill-olive-500' : 'text-slate-200 fill-slate-200'}`} />
+          <Star key={i} className={`w-4 h-4 ${i < rating ? 'text-olive-500 fill-olive-500' : 'text-slate-200 dark:text-teal-800 fill-slate-200 dark:fill-teal-800'}`} />
         ))}
       </div>
-      <p className="text-teal-800/80 mb-8 leading-relaxed font-light flex-grow">"{text}"</p>
+      <p className="text-teal-800/80 dark:text-teal-200/80 mb-8 leading-relaxed font-light flex-grow">"{text}"</p>
       <div className="flex items-center gap-4 mt-auto">
-        <div className="w-10 h-10 rounded-full bg-teal-50 flex items-center justify-center text-teal-700 font-semibold border border-teal-100">
+        <div className="w-10 h-10 rounded-full bg-teal-50 dark:bg-teal-800 flex items-center justify-center text-teal-700 dark:text-teal-200 font-semibold border border-teal-100 dark:border-teal-700">
           {name.charAt(0)}
         </div>
         <div>
-          <div className="font-semibold text-teal-900 text-sm">{name}</div>
-          <div className="text-xs text-teal-600/60">{role}</div>
+          <div className="font-semibold text-teal-900 dark:text-teal-50 text-sm">{name}</div>
+          <div className="text-xs text-teal-600/60 dark:text-teal-400/60">{role}</div>
         </div>
       </div>
     </motion.div>
