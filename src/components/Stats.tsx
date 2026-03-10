@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 const stats = [
   { value: 500, suffix: '+', label: 'Proyectos completados' },
   { value: 10,  suffix: '+', label: 'Años de experiencia' },
-  { value: 100, suffix: '%', label: 'Clientes satisfechos' },
+  { value: 98,  suffix: '%', label: 'Clientes que repiten o recomiendan' },
   { value: 24,  suffix: 'h', label: 'Para tu presupuesto' },
 ];
 

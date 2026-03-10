@@ -36,6 +36,21 @@ export function ZoneCoverage() {
             <p className="text-teal-700/70 dark:text-teal-300/70 text-lg font-light leading-relaxed mb-8">
               Nos desplazamos a cualquier punto de la provincia. Si no ves tu municipio en la lista, consúltanos — seguramente también llegamos.
             </p>
+            <div className="flex flex-wrap gap-2 mb-8">
+              {zones.map((zone) => (
+                <span
+                  key={zone.name}
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-xs font-medium ${
+                    zone.main
+                      ? 'bg-teal-700 border-teal-700 text-white'
+                      : 'bg-teal-50 dark:bg-teal-900/50 border-teal-100 dark:border-teal-800/50 text-teal-800 dark:text-teal-200'
+                  }`}
+                >
+                  <MapPin className="w-3 h-3 flex-shrink-0" />
+                  {zone.name}
+                </span>
+              ))}
+            </div>
             <a
               href="tel:+34697873826"
               className="inline-flex items-center gap-3 px-6 py-3 bg-teal-700 dark:bg-teal-600 hover:bg-teal-800 dark:hover:bg-teal-700 text-white rounded-full font-medium transition-colors shadow-md"
@@ -45,35 +60,24 @@ export function ZoneCoverage() {
             </a>
           </motion.div>
 
-          {/* Zone grid */}
+          {/* Map */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="flex flex-wrap gap-3"
+            className="rounded-3xl overflow-hidden shadow-xl border border-teal-100 dark:border-teal-800/50 h-80 lg:h-full min-h-[320px]"
           >
-            {zones.map((zone, i) => (
-              <motion.div
-                key={zone.name}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: i * 0.05 }}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-full border text-sm font-medium transition-colors ${
-                  zone.main
-                    ? 'bg-teal-700 dark:bg-teal-700 border-teal-700 text-white'
-                    : 'bg-white dark:bg-teal-900/50 border-teal-100 dark:border-teal-800/50 text-teal-800 dark:text-teal-200 hover:border-teal-300 dark:hover:border-teal-600'
-                }`}
-              >
-                <MapPin className="w-3.5 h-3.5 flex-shrink-0" />
-                {zone.name}
-              </motion.div>
-            ))}
-
-            <p className="w-full text-xs text-teal-500/60 dark:text-teal-500/60 mt-2">
-              Zonas principales destacadas. Cobertura extendida disponible.
-            </p>
+            <iframe
+              title="Zona de cobertura Uldeco — Murcia"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d200000!2d-1.1307!3d37.9922!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6346b1ed8e4e01%3A0x4c70b37d7e4ec751!2sMurcia!5e0!3m2!1ses!2ses!4v1700000000000"
+              width="100%"
+              height="100%"
+              style={{ border: 0, filter: 'saturate(0.8)' }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </motion.div>
 
         </div>
